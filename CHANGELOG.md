@@ -1,0 +1,43 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+This project is built incrementally to demonstrate a production-grade CI/CD platform
+using GitHub Actions, AWS ECS/Fargate, and Infrastructure as Code (Terraform),
+following modern platform engineering and progressive delivery practices.
+
+The format is inspired by Keep a Changelog,
+and this project adheres loosely to Semantic Versioning.
+
+---
+
+## [Unreleased]
+
+### Planned
+- Manual AWS deployment (ECR + ECS/Fargate + ALB)
+- CI pipeline (GitHub Actions): build, test, scan
+- CD pipeline with OIDC-based AWS authentication
+- Environment promotion (dev → prod)
+- Progressive delivery (canary deployment)
+- Automated health checks and rollback
+- Observability gates (CloudWatch metrics)
+- GitOps-style deployment variant
+- Reusable CI/CD workflow templates
+- Architecture diagrams and documentation
+
+---
+
+## [0.1.0] – Initial Local Application Setup
+
+### Added
+- FastAPI application with root (`/`) and health (`/health`) endpoints
+- Dockerfile for containerizing the application
+- Docker Compose configuration for local development
+- Initial repository structure for app, infra, scripts, and workflows
+
+### Notes
+- This release establishes the local development baseline.
+- No cloud infrastructure or CI/CD automation is included yet.
+- The `/health` endpoint will be used later for ALB and ECS health checks.
+
+---
