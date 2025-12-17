@@ -27,6 +27,24 @@ and this project adheres loosely to Semantic Versioning.
 
 ---
 
+## [0.1.1] – ECS Fargate Runtime Baseline
+
+### Added
+- Dedicated VPC with two public subnets and internet gateway
+- Public route table and subnet associations
+- Security groups for ALB and ECS tasks
+- ECS cluster, task definition, and service using AWS Fargate
+- Application Load Balancer with IP target group
+- Health checks configured at both container and ALB levels
+- CloudWatch log group for ECS task logs
+
+### Notes
+- Runtime was intentionally deployed manually to establish a clear mental model
+  before introducing Infrastructure as Code and CI/CD automation.
+- This baseline will be recreated using Terraform in a later phase.
+
+---
+
 ## [0.1.0] – Initial Local Application Setup
 
 ### Added
