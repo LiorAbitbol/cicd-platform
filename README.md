@@ -6,7 +6,7 @@ and Infrastructure as Code.
 
 ---
 
-## 🎯 Project Goals
+## Project Goals
 
 - Build a realistic CI/CD platform from first principles
 - Separate **confidence (CI)** from **risk (CD)**
@@ -15,7 +15,7 @@ and Infrastructure as Code.
 
 ---
 
-## 🏗️ Architecture Overview
+## Architecture Overview
 
 High-level target architecture:
 
@@ -38,7 +38,7 @@ Application Load Balancer
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 .
@@ -55,7 +55,7 @@ Application Load Balancer
 
 ---
 
-## ✅ Current State
+## Current State
 
 - [x] FastAPI application with health endpoint
 - [x] Dockerized application
@@ -67,7 +67,7 @@ Application Load Balancer
 
 ---
 
-## 🧪 Local Development
+## Local Development
 
 ### Python (recommended)
 
@@ -85,7 +85,7 @@ See [`docs/local-docker.md`](docs/local-docker.md) for full instructions.
 
 ---
 
-## ⚠️ Disclaimer
+## Disclaimer
 
 This repository is designed for learning, demonstration, and portfolio purposes.
 It intentionally favors clarity over completeness and should not be used
@@ -93,6 +93,6 @@ as-is for production workloads without further hardening.
 
 ---
 
-## 📜 License
+## License
 
 MIT
