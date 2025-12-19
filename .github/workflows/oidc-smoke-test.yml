@@ -1,0 +1,21 @@
+name: OIDC Smoke Test (AWS)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configure AWS credentials via OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::477153214803:role/cicd-platform-github-oidc
+          aws-region: us-east-1
+
+      - name: Who am I? (STS)
+        run: aws sts get-caller-identity
