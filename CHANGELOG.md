@@ -14,8 +14,9 @@ and this project adheres loosely to Semantic Versioning.
 ## [Unreleased]
 
 ### Added
-- CI workflow (GitHub Actions) running ruff, pytest, and docker build validation on PRs and main branch pushes
-- Minimal unit test coverage for `/health` endpoint
+- CI-only GitHub Actions workflow running ruff lint, pytest, and Docker build validation
+- Python package structure for application code (`app/`)
+- Minimal test coverage for `/health` endpoint
 
 ### Planned
 - Manual AWS deployment (ECR + ECS/Fargate + ALB)
