@@ -13,6 +13,10 @@ and this project adheres loosely to Semantic Versioning.
 
 ## [Unreleased]
 
+### Added
+- CI workflow (GitHub Actions) running ruff, pytest, and docker build validation on PRs and main branch pushes
+- Minimal unit test coverage for `/health` endpoint
+
 ### Planned
 - Manual AWS deployment (ECR + ECS/Fargate + ALB)
 - CI pipeline (GitHub Actions): build, test, scan
