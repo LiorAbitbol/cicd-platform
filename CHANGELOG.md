@@ -14,6 +14,9 @@ and this project adheres loosely to Semantic Versioning.
 ## [Unreleased]
 
 ### Added
+- End-to-end CD pipeline using GitHub Actions and AWS OIDC
+- Automated ECR image publishing and ECS service deployments
+- Public ALB health validation for deployed services
 - OIDC-based CD workflow to build and push Docker images to ECR
 - Automated ECS deployment workflow registering new task definitions and updating the service
 - AWS OIDC deploy role permissions for ECR push and ECS service updates
