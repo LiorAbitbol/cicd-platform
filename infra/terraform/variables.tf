@@ -24,7 +24,7 @@ variable "app_port" {
 
 variable "desired_count" {
   type        = number
-  description = "ECS service desired count. Default 0 so apply works before first image push."
+  description = "ECS service desired count (0 by default so apply works before first image push)."
   default     = 0
 }
 

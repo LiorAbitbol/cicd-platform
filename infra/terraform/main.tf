@@ -201,6 +201,8 @@ resource "aws_ecr_repository" "this" {
   name                 = var.ecr_repo_name
   image_tag_mutability = "MUTABLE"
 
+  force_delete = true
+
   image_scanning_configuration {
     scan_on_push = true
   }
@@ -248,7 +250,6 @@ resource "aws_ecs_cluster" "this" {
   }
 }
 
-# NOTE: image is placeholder; service defaults to desired_count=0 so tasks won't run until you deploy.
 resource "aws_ecs_task_definition" "this" {
   family                   = var.task_family
   requires_compatibilities = ["FARGATE"]
@@ -303,7 +304,7 @@ resource "aws_ecs_service" "this" {
   network_configuration {
     subnets          = [aws_subnet.public_a.id, aws_subnet.public_b.id]
     security_groups  = [aws_security_group.task.id]
-    assign_public_ip = false
+    assign_public_ip = true
   }
 
   load_balancer {
