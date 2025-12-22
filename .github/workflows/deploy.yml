@@ -2,7 +2,6 @@ name: Deploy (ECR -> ECS)
 
 on:
   workflow_dispatch:
-  # Enable later after first successful manual deploy:
   push:
     branches: 
       - main
