@@ -2,9 +2,12 @@ name: Deploy (ECR -> ECS)
 
 on:
   workflow_dispatch:
-  push:
-    branches: 
-      - main
+
+  # Uncomment to make CD automatic on commit -or- 
+  # leave commented for manual CD.
+  #push:
+  #  branches: 
+  #    - main
 
 permissions:
   id-token: write
