@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 
 This project is built incrementally to demonstrate a production-grade CI/CD platform
-using GitHub Actions, AWS ECS/Fargate, and Infrastructure as Code (Terraform),
+using GitHub Actions, AWS ECS/Fargate, and Infrastructure as Code,
 following modern platform engineering and progressive delivery practices.
 
 The format is inspired by Keep a Changelog,
@@ -13,30 +13,33 @@ and this project adheres loosely to Semantic Versioning.
 
 ## [Unreleased]
 
-### Added
-- End-to-end CD pipeline using GitHub Actions and AWS OIDC
-- Automated ECR image publishing and ECS service deployments
-- Public ALB health validation for deployed services
-- OIDC-based CD workflow to build and push Docker images to ECR
-- Automated ECS deployment workflow registering new task definitions and updating the service
-- AWS OIDC deploy role permissions for ECR push and ECS service updates
-- GitHub Actions deployment workflow (ECR -> ECS) using OIDC (no static credentials)
-- Versioned ECS task definition template for repeatable deployments
-- CI-only GitHub Actions workflow running ruff lint, pytest, and Docker build validation
-- Python package structure for application code (`app/`)
-- Minimal test coverage for `/health` endpoint
-
-### Planned
-- Manual AWS deployment (ECR + ECS/Fargate + ALB)
-- CI pipeline (GitHub Actions): build, test, scan
-- CD pipeline with OIDC-based AWS authentication
-- Environment promotion (dev → prod)
-- Progressive delivery (canary deployment)
-- Automated health checks and rollback
-- Observability gates (CloudWatch metrics)
+### Possible Extensions
+- Infrastructure as Code (Terraform) for ECS runtime and networking
+- Multi-environment promotion (dev → prod)
+- Progressive delivery (canary or blue/green deployments)
+- Automated rollback on failed health checks
+- Observability gates using CloudWatch metrics and alarms
 - GitOps-style deployment variant
 - Reusable CI/CD workflow templates
-- Architecture diagrams and documentation
+
+---
+
+## [0.2.0] – Secure CI/CD Platform Completion
+
+### Added
+- End-to-end CI/CD pipeline using GitHub Actions and AWS ECS/Fargate
+- OIDC-based authentication between GitHub Actions and AWS (no static credentials)
+- Automated Docker image publishing to Amazon ECR
+- Automated ECS task definition registration and rolling service deployments
+- Health-gated deployments behind an Application Load Balancer
+- Public service validation via ALB DNS endpoint
+- Simple HTML landing page for root endpoint (`/`)
+- Clean, production-aligned repository structure
+- Operator-grade documentation and runbooks for local and cloud workflows
+
+### Notes
+- This release completes the core CI/CD platform implementation.
+- The system mirrors deployment patterns used by modern platform engineering teams.
 
 ---
 
@@ -69,6 +72,4 @@ and this project adheres loosely to Semantic Versioning.
 ### Notes
 - This release establishes the local development baseline.
 - No cloud infrastructure or CI/CD automation is included yet.
-- The `/health` endpoint will be used later for ALB and ECS health checks.
-
----
+- The `/health` endpoint is used for ALB and ECS health checks.
