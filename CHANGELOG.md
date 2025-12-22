@@ -14,6 +14,10 @@ and this project adheres loosely to Semantic Versioning.
 ## [Unreleased]
 
 ### Added
+### Added
+- AWS OIDC deploy role permissions for ECR push and ECS service updates
+- GitHub Actions deployment workflow (ECR -> ECS) using OIDC (no static credentials)
+- Versioned ECS task definition template for repeatable deployments
 - CI-only GitHub Actions workflow running ruff lint, pytest, and Docker build validation
 - Python package structure for application code (`app/`)
 - Minimal test coverage for `/health` endpoint

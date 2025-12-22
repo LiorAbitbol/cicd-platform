@@ -1,0 +1,45 @@
+{
+  "family": "cicd-pipeline-task",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512",
+  "runtimePlatform": {
+    "cpuArchitecture": "X86_64",
+    "operatingSystemFamily": "LINUX"
+  },
+  "executionRoleArn": "arn:aws:iam::477153214803:role/cicd-pipeline-ecsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "name": "api",
+      "image": "REPLACED_BY_WORKFLOW",
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 8000,
+          "protocol": "tcp",
+          "appProtocol": "http"
+        }
+      ],
+      "healthCheck": {
+        "command": [
+          "CMD-SHELL",
+          "python -c \"import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health'); print('ok')\" || exit 1"
+        ],
+        "interval": 10,
+        "timeout": 5,
+        "retries": 3,
+        "startPeriod": 30
+      },
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/cicd-pipeline-task",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "ecs",
+          "awslogs-create-group": "true"
+        }
+      }
+    }
+  ]
+}
