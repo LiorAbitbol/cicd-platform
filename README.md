@@ -4,6 +4,8 @@ A production-grade, reference CI/CD platform project built to demonstrate
 modern software delivery practices using GitHub Actions, AWS Elastic Container Service (ECS),
 and Infrastructure as Code (IaC).
 
+See the **Documentation** section below for deployment, runtime, and teardown guides.
+
 ---
 
 ## What This Project Demonstrates
@@ -86,7 +88,7 @@ This mirrors how mature platform teams design delivery systems.
 ├── infra/                    # Infrastructure and deployment artifacts
 │   └── ecs/
 │       └── task-definition.json
-├── docs/                     # Runbooks, setup guides, and architecture notes│   
+├── docs/                     # Runbooks, setup guides, and architecture notes   
 ├── scripts/                  # Helper and utility scripts
 ├── .github/
 │   └── workflows/            # GitHub Actions CI/CD pipelines
@@ -102,16 +104,44 @@ This mirrors how mature platform teams design delivery systems.
 
 ---
 
+## Documentation
+
+The following guides describe how to operate and extend the platform:
+
+### Core Workflows
+
+- **Getting Started**  
+  [`docs/getting-started.md`](docs/getting-started.md)
+  End-to-end walkthrough for deploying, running, and tearing down the platform.
+
+- **Terraform Runtime Lifecycle**  
+  [`docs/terraform-runtime.md`](docs/terraform-runtime.md)
+  Details how AWS infrastructure is created, scaled, and destroyed using Terraform.
+
+### Security & Identity 
+
+- **GitHub Actions OIDC Setup**  
+  [`docs/oidc-setup.md`](docs/oidc-setup.md)
+  Explains secure, credential-free authentication between GitHub Actions and AWS.
+
+### Local Development 
+
+- **Local Docker Development**  
+  [`docs/local-docker.md`](docs/local-docker.md)
+  Instructions for building and running the application locally with Docker.
+
+---
+
 ## How to Reason About This System
 
 At a high level, the delivery flow looks like:
 
-* Confidence (CI)
-* Immutable Artifact (Docker image)
-* Verified Identity (OIDC)
-* Deployment (ECS service update)
-* Health Validation
-* Traffic Routing (ALB)
+1. Confidence (CI)
+2. Immutable Artifact (Docker image)
+3. Verified Identity (OIDC)
+4. Deployment (ECS service update)
+5. Health Validation
+6. Traffic Routing (ALB)
 
 Each stage introduces a boundary that reduces risk and increases observability. Understanding these boundaries is more important than any individual tool choice.
 
@@ -130,6 +160,7 @@ Each stage introduces a boundary that reduces risk and increases observability. 
 - [x] Local Docker development workflow
 - [x] Operator-grade documentation and runbooks
 
+Together, these components form a complete, reproducible CI/CD platform suitable for reference and extension.
 
 ---
 
@@ -156,7 +187,7 @@ See [`docs/local-docker.md`](docs/local-docker.md) for full instructions.
 This project is intentionally complete in its current form.
 Possible future extensions include:
 
-- Converting the runtime to Terraform (Infrastructure as Code)
+- Extending Terraform to manage IAM and GitHub OIDC resources
 - Multi-environment promotion (dev → prod)
 - Deployment safety features (canary / rollback automation)
 - Observability enhancements (metrics and alerts)
