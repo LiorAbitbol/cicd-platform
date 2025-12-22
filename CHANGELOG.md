@@ -14,7 +14,8 @@ and this project adheres loosely to Semantic Versioning.
 ## [Unreleased]
 
 ### Added
-### Added
+- OIDC-based CD workflow to build and push Docker images to ECR
+- Automated ECS deployment workflow registering new task definitions and updating the service
 - AWS OIDC deploy role permissions for ECR push and ECS service updates
 - GitHub Actions deployment workflow (ECR -> ECS) using OIDC (no static credentials)
 - Versioned ECS task definition template for repeatable deployments
