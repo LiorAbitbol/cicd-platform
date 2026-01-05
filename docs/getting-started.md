@@ -63,6 +63,10 @@ The GitHub Actions Deploy (ECR → ECS) workflow will:
 
 At this point, the service exists but is still scaled to zero.
 
+### Note
+```GitHub Actions Deploy (ECR → ECS) workflow is set to manual by default (review .github/workflows/deploy.yml). Will require the action to be run from GitHub.```
+
+
 ---
 
 ## Step 3 — Start the Service (Scale Up)
