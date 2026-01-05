@@ -49,6 +49,7 @@ def root() -> str:
             <h1>CI/CD Platform</h1>
             <p>Deployment successful.</p>
             <p>This service is running on AWS ECS Fargate.</p>
+            <p>Deployment datetime: Jan 05, 2026 at 12:02 PM</p>
         </div>
     </body>
     </html>
